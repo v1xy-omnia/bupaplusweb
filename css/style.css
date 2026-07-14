@@ -185,7 +185,7 @@ ul {
 }
 
 .nav-logo img {
-  height: 55px;
+  height: 75px;
   width: auto;
   transition: transform var(--transition-fast);
 }
@@ -455,7 +455,7 @@ ul {
 }
 
 .hero-logo {
-  width: 120px;
+  width: 200px;
   margin: 0 auto 30px;
   opacity: 0;
   animation: fadeInDown 1s 0.3s forwards;
