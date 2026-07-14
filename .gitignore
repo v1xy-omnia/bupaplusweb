@@ -1,0 +1,14 @@
+# Large video files (GitHub 100MB limit)
+*.mp4
+*.MP4
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Node modules (if any future dependencies added)
+node_modules/
