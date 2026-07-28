@@ -1,0 +1,528 @@
+/* ========================================
+   BÜPA PLUS HOTEL — V3 DESIGN SYSTEM
+   Avant-Garde, Cinematic, Layoutless Grid
+   ======================================== */
+
+/* --- V3 Custom Properties --- */
+[data-theme="v3"] {
+    --v3-bg: #0A0A0A;
+    --v3-text: #EAE6DF;
+    --v3-gold: #C2A370;
+    --v3-gold-dark: #8C7040;
+    --v3-border: rgba(234, 230, 223, 0.1);
+    --v3-muted: rgba(234, 230, 223, 0.4);
+}
+
+/* --- Theme Hide/Show Rules --- */
+[data-theme="v3"] .v1-only,
+[data-theme="v3"] .v2-only {
+    display: none !important;
+}
+
+[data-theme="v1"] .v3-only,
+[data-theme="v2"] .v3-only {
+    display: none !important;
+}
+
+/* --- V3 Global Override --- */
+[data-theme="v3"] body,
+body[data-theme="v3"] {
+    background-color: var(--v3-bg);
+    color: var(--v3-text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Base resets inside V3 */
+[data-theme="v3"] h1,
+[data-theme="v3"] h2,
+[data-theme="v3"] h3,
+[data-theme="v3"] h4 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* ========================================
+   V3 "INVISIBLE" NAV & MENU MODAL
+   ======================================== */
+[data-theme="v3"] .v3-nav-trigger {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    mix-blend-mode: difference;
+    color: #fff;
+}
+
+[data-theme="v3"] .v3-menu-label {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+[data-theme="v3"] .v3-burger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 40px;
+}
+
+[data-theme="v3"] .v3-burger span {
+    display: block;
+    height: 1px;
+    background: #fff;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="v3"] .v3-burger span:nth-child(1) {
+    width: 100%;
+}
+
+[data-theme="v3"] .v3-burger span:nth-child(2) {
+    width: 70%;
+    transform-origin: right;
+}
+
+[data-theme="v3"] .v3-nav-trigger:hover .v3-burger span:nth-child(2) {
+    width: 100%;
+}
+
+[data-theme="v3"] .v3-overlay-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--v3-bg);
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10vw;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+[data-theme="v3"] .v3-overlay-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+[data-theme="v3"] .v3-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+[data-theme="v3"] .v3-menu-links a {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: var(--v3-muted);
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.4s ease, transform 0.4s ease;
+    transform: translateY(40px);
+    opacity: 0;
+}
+
+[data-theme="v3"] .v3-overlay-menu.active .v3-menu-links a {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+[data-theme="v3"] .v3-menu-links a:hover {
+    color: var(--v3-gold);
+    font-style: italic;
+}
+
+/* Staggered animation */
+[data-theme="v3"] .v3-overlay-menu.active a:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+[data-theme="v3"] .v3-overlay-menu.active a:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+[data-theme="v3"] .v3-overlay-menu.active a:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+[data-theme="v3"] .v3-overlay-menu.active a:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+/* ========================================
+   SCENE 1: THE HOOK
+   ======================================== */
+[data-theme="v3"] .v3-scene-hook {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="v3"] .v3-video-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+[data-theme="v3"] .v3-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6) contrast(1.1) grayscale(0.2);
+}
+
+[data-theme="v3"] .v3-hook-brand {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    mix-blend-mode: overlay;
+}
+
+[data-theme="v3"] .v3-hook-brand h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 300;
+    letter-spacing: 1.5em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-right: -1.5em;
+    /* Compensate for letter spacing */
+}
+
+[data-theme="v3"] .v3-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+    opacity: 0.7;
+}
+
+[data-theme="v3"] .v3-scroll-indicator span {
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+[data-theme="v3"] .v3-line-drop {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="v3"] .v3-line-drop::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #fff;
+    animation: drop 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+}
+
+/* ========================================
+   SCENE 2: THE STATEMENT
+   ======================================== */
+[data-theme="v3"] .v3-scene-statement {
+    padding: 20vh 5vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+[data-theme="v3"] .v3-massive-text {
+    font-size: clamp(3rem, 10vw, 9rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--v3-text);
+    max-width: 1400px;
+    letter-spacing: -0.03em;
+}
+
+[data-theme="v3"] .v3-massive-text em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--v3-gold);
+    text-transform: lowercase;
+}
+
+[data-theme="v3"] .v3-statement-desc {
+    margin-top: 10vh;
+    max-width: 400px;
+    margin-left: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--v3-muted);
+    font-weight: 300;
+}
+
+/* ========================================
+   SCENE 3: THE COLLECTION (ROOMS)
+   ======================================== */
+[data-theme="v3"] .v3-scene-rooms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    border-top: 1px solid var(--v3-border);
+}
+
+/* Left side sticky header */
+[data-theme="v3"] .v3-rooms-left {
+    position: relative;
+}
+
+[data-theme="v3"] .v3-rooms-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vw;
+    border-right: 1px solid var(--v3-border);
+}
+
+[data-theme="v3"] .v3-rooms-sticky h2 {
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: 1;
+    color: var(--v3-gold);
+    font-style: italic;
+}
+
+[data-theme="v3"] .v3-rooms-sticky p {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: var(--v3-text);
+    max-width: 300px;
+}
+
+/* Right side scrolling catalog */
+[data-theme="v3"] .v3-rooms-right {
+    display: flex;
+    flex-direction: column;
+}
+
+[data-theme="v3"] .v3-room-catalog-item {
+    height: 100vh;
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--v3-border);
+}
+
+[data-theme="v3"] .v3-room-catalog-img {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    background: #111;
+}
+
+[data-theme="v3"] .v3-room-catalog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="v3"] .v3-room-catalog-item:hover .v3-room-catalog-img img {
+    transform: scale(1.05);
+}
+
+[data-theme="v3"] .v3-room-catalog-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 2rem;
+}
+
+[data-theme="v3"] .v3-room-catalog-info h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+[data-theme="v3"] .v3-btn-minimal {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--v3-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--v3-gold);
+    padding-bottom: 4px;
+    transition: color 0.3s;
+}
+
+[data-theme="v3"] .v3-btn-minimal:hover {
+    color: var(--v3-gold);
+}
+
+@media (max-width: 992px) {
+    [data-theme="v3"] .v3-scene-rooms {
+        grid-template-columns: 1fr;
+    }
+
+    [data-theme="v3"] .v3-rooms-sticky {
+        position: relative;
+        height: auto;
+        padding: 10vh 5vw;
+        border-right: none;
+        border-bottom: 1px solid var(--v3-border);
+    }
+
+    [data-theme="v3"] .v3-room-catalog-item {
+        height: auto;
+        padding: 10vh 5vw;
+    }
+}
+
+/* ========================================
+   SCENE 4: THE EXPERIENCE (360 TOUR)
+   ======================================== */
+[data-theme="v3"] .v3-scene-tour {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+[data-theme="v3"] .v3-tour-frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+    transition: opacity 0.6s ease;
+}
+
+[data-theme="v3"] .v3-tour-frame:hover {
+    opacity: 1;
+}
+
+[data-theme="v3"] .v3-tour-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+[data-theme="v3"] .v3-tour-overlay-text {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+    text-align: center;
+}
+
+[data-theme="v3"] .v3-tour-overlay-text h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 0.1em;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* ========================================
+   SCENE 5: THE CONTACT
+   ======================================== */
+[data-theme="v3"] .v3-scene-contact {
+    padding: 15vh 5vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+[data-theme="v3"] .v3-contact-mega {
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.8;
+    color: var(--v3-text);
+    margin-bottom: 10vh;
+    transition: color 0.4s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+[data-theme="v3"] .v3-contact-mega:hover {
+    color: var(--v3-gold);
+}
+
+[data-theme="v3"] .v3-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    border-top: 1px solid var(--v3-border);
+    padding-top: 40px;
+}
+
+[data-theme="v3"] .v3-footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--v3-gold);
+    margin-bottom: 20px;
+}
+
+[data-theme="v3"] .v3-footer-col p,
+[data-theme="v3"] .v3-footer-col a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--v3-muted);
+    text-decoration: none;
+    line-height: 1.5;
+    transition: color 0.3s;
+}
+
+[data-theme="v3"] .v3-footer-col a:hover {
+    color: var(--v3-text);
+}
+
+/* ========================================
+   V3 TOGGLE OVERRIDE
+   ======================================== */
+[data-theme="v3"] .theme-toggle {
+    background: rgba(10, 10, 10, 0.8);
+    border-color: rgba(234, 230, 223, 0.2);
+}
+
+[data-theme="v3"] .theme-toggle button {
+    color: rgba(234, 230, 223, 0.4);
+}
+
+[data-theme="v3"] .theme-toggle button.active {
+    background: var(--v3-text);
+    color: var(--v3-bg);
+}

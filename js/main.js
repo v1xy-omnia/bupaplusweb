@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initNavbar();
   initMobileMenu();
+  initV3Menu();
   initScrollReveal();
   initCounterAnimation();
   initSmoothScroll();
@@ -17,32 +18,54 @@ document.addEventListener('DOMContentLoaded', () => {
 function initThemeToggle() {
   const btnV1 = document.getElementById('btnV1');
   const btnV2 = document.getElementById('btnV2');
-  if (!btnV1 || !btnV2) return;
+  const btnV3 = document.getElementById('btnV3');
+  if (!btnV1) return;
 
-  // Retrieve saved theme or default to V1
   const savedTheme = localStorage.getItem('bupa_theme') || 'v1';
   document.body.setAttribute('data-theme', savedTheme);
 
-  if (savedTheme === 'v2') {
-    btnV2.classList.add('active');
-    btnV1.classList.remove('active');
+  const buttons = [btnV1, btnV2, btnV3].filter(Boolean);
+
+  function setActive(themeStr, activeBtn) {
+    document.body.setAttribute('data-theme', themeStr);
+    localStorage.setItem('bupa_theme', themeStr);
+    buttons.forEach(b => b.classList.remove('active'));
+    activeBtn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  btnV1.addEventListener('click', () => {
-    document.body.setAttribute('data-theme', 'v1');
-    localStorage.setItem('bupa_theme', 'v1');
-    btnV1.classList.add('active');
-    btnV2.classList.remove('active');
-    // Force reset scroll to avoid visual glitches jumping between themes
-    window.scrollTo({ top: 0, behavior: 'instant' });
+  if (savedTheme === 'v2' && btnV2) {
+    setActive('v2', btnV2);
+  } else if (savedTheme === 'v3' && btnV3) {
+    setActive('v3', btnV3);
+  } else {
+    setActive('v1', btnV1);
+  }
+
+  btnV1.addEventListener('click', () => setActive('v1', btnV1));
+  if (btnV2) btnV2.addEventListener('click', () => setActive('v2', btnV2));
+  if (btnV3) btnV3.addEventListener('click', () => setActive('v3', btnV3));
+}
+
+/* --- V3 Menu Overlay --- */
+function initV3Menu() {
+  const trigger = document.getElementById('v3Trigger');
+  const overlay = document.getElementById('v3MenuOverlay');
+
+  if (!trigger || !overlay) return;
+
+  trigger.addEventListener('click', () => {
+    overlay.classList.toggle('active');
+    // Lock scroll when menu is open
+    document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
   });
 
-  btnV2.addEventListener('click', () => {
-    document.body.setAttribute('data-theme', 'v2');
-    localStorage.setItem('bupa_theme', 'v2');
-    btnV2.classList.add('active');
-    btnV1.classList.remove('active');
-    window.scrollTo({ top: 0, behavior: 'instant' });
+  const links = overlay.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
   });
 }
 
