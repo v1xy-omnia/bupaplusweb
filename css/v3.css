@@ -4,7 +4,7 @@
    ======================================== */
 
 /* --- V3 Custom Properties --- */
-[data-theme="v3"] {
+:root {
     --v3-bg: #0A0A0A;
     --v3-text: #EAE6DF;
     --v3-gold: #C2A370;
@@ -13,40 +13,30 @@
     --v3-muted: rgba(234, 230, 223, 0.4);
 }
 
-/* --- Theme Hide/Show Rules --- */
-[data-theme="v3"] .v1-only,
-[data-theme="v3"] .v2-only {
-    display: none !important;
-}
-
-[data-theme="v1"] .v3-only,
-[data-theme="v2"] .v3-only {
-    display: none !important;
-}
-
 /* --- V3 Global Override --- */
-[data-theme="v3"] body,
-body[data-theme="v3"] {
+body {
     background-color: var(--v3-bg);
     color: var(--v3-text);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-/* Base resets inside V3 */
-[data-theme="v3"] h1,
-[data-theme="v3"] h2,
-[data-theme="v3"] h3,
-[data-theme="v3"] h4 {
+/* Base resets */
+h1,
+h2,
+h3,
+h4 {
     margin: 0;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
 }
 
 /* ========================================
-   V3 "INVISIBLE" NAV & MENU MODAL
+   "INVISIBLE" NAV & MENU MODAL
    ======================================== */
-[data-theme="v3"] .v3-nav-trigger {
+.v3-nav-trigger {
     position: fixed;
     top: 40px;
     right: 40px;
@@ -59,41 +49,41 @@ body[data-theme="v3"] {
     color: #fff;
 }
 
-[data-theme="v3"] .v3-menu-label {
+.v3-menu-label {
     font-size: 0.75rem;
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 500;
 }
 
-[data-theme="v3"] .v3-burger {
+.v3-burger {
     display: flex;
     flex-direction: column;
     gap: 6px;
     width: 40px;
 }
 
-[data-theme="v3"] .v3-burger span {
+.v3-burger span {
     display: block;
     height: 1px;
     background: #fff;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-[data-theme="v3"] .v3-burger span:nth-child(1) {
+.v3-burger span:nth-child(1) {
     width: 100%;
 }
 
-[data-theme="v3"] .v3-burger span:nth-child(2) {
+.v3-burger span:nth-child(2) {
     width: 70%;
     transform-origin: right;
 }
 
-[data-theme="v3"] .v3-nav-trigger:hover .v3-burger span:nth-child(2) {
+.v3-nav-trigger:hover .v3-burger span:nth-child(2) {
     width: 100%;
 }
 
-[data-theme="v3"] .v3-overlay-menu {
+.v3-overlay-menu {
     position: fixed;
     inset: 0;
     background: var(--v3-bg);
@@ -107,18 +97,18 @@ body[data-theme="v3"] {
     transition: opacity 0.6s ease;
 }
 
-[data-theme="v3"] .v3-overlay-menu.active {
+.v3-overlay-menu.active {
     opacity: 1;
     pointer-events: auto;
 }
 
-[data-theme="v3"] .v3-menu-links {
+.v3-menu-links {
     display: flex;
     flex-direction: column;
     gap: 1.5vh;
 }
 
-[data-theme="v3"] .v3-menu-links a {
+.v3-menu-links a {
     font-family: 'Playfair Display', serif;
     font-size: clamp(3rem, 8vw, 6rem);
     color: var(--v3-muted);
@@ -129,37 +119,37 @@ body[data-theme="v3"] {
     opacity: 0;
 }
 
-[data-theme="v3"] .v3-overlay-menu.active .v3-menu-links a {
+.v3-overlay-menu.active .v3-menu-links a {
     transform: translateY(0);
     opacity: 1;
 }
 
-[data-theme="v3"] .v3-menu-links a:hover {
+.v3-menu-links a:hover {
     color: var(--v3-gold);
     font-style: italic;
 }
 
 /* Staggered animation */
-[data-theme="v3"] .v3-overlay-menu.active a:nth-child(1) {
+.v3-overlay-menu.active a:nth-child(1) {
     transition-delay: 0.1s;
 }
 
-[data-theme="v3"] .v3-overlay-menu.active a:nth-child(2) {
+.v3-overlay-menu.active a:nth-child(2) {
     transition-delay: 0.2s;
 }
 
-[data-theme="v3"] .v3-overlay-menu.active a:nth-child(3) {
+.v3-overlay-menu.active a:nth-child(3) {
     transition-delay: 0.3s;
 }
 
-[data-theme="v3"] .v3-overlay-menu.active a:nth-child(4) {
+.v3-overlay-menu.active a:nth-child(4) {
     transition-delay: 0.4s;
 }
 
 /* ========================================
    SCENE 1: THE HOOK
    ======================================== */
-[data-theme="v3"] .v3-scene-hook {
+.v3-scene-hook {
     position: relative;
     height: 100vh;
     width: 100%;
@@ -169,27 +159,27 @@ body[data-theme="v3"] {
     justify-content: center;
 }
 
-[data-theme="v3"] .v3-video-wrapper {
+.v3-video-wrapper {
     position: absolute;
     inset: 0;
     z-index: 1;
 }
 
-[data-theme="v3"] .v3-video-wrapper video {
+.v3-video-wrapper video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(0.6) contrast(1.1) grayscale(0.2);
 }
 
-[data-theme="v3"] .v3-hook-brand {
+.v3-hook-brand {
     position: relative;
     z-index: 2;
     text-align: center;
     mix-blend-mode: overlay;
 }
 
-[data-theme="v3"] .v3-hook-brand h1 {
+.v3-hook-brand h1 {
     font-family: 'Inter', sans-serif;
     font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: 300;
@@ -197,10 +187,9 @@ body[data-theme="v3"] {
     text-transform: uppercase;
     color: #fff;
     margin-right: -1.5em;
-    /* Compensate for letter spacing */
 }
 
-[data-theme="v3"] .v3-scroll-indicator {
+.v3-scroll-indicator {
     position: absolute;
     bottom: 40px;
     left: 50%;
@@ -214,13 +203,13 @@ body[data-theme="v3"] {
     opacity: 0.7;
 }
 
-[data-theme="v3"] .v3-scroll-indicator span {
+.v3-scroll-indicator span {
     font-size: 0.6rem;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 
-[data-theme="v3"] .v3-line-drop {
+.v3-line-drop {
     width: 1px;
     height: 60px;
     background: rgba(255, 255, 255, 0.2);
@@ -228,7 +217,7 @@ body[data-theme="v3"] {
     overflow: hidden;
 }
 
-[data-theme="v3"] .v3-line-drop::after {
+.v3-line-drop::after {
     content: '';
     position: absolute;
     top: 0;
@@ -252,7 +241,7 @@ body[data-theme="v3"] {
 /* ========================================
    SCENE 2: THE STATEMENT
    ======================================== */
-[data-theme="v3"] .v3-scene-statement {
+.v3-scene-statement {
     padding: 20vh 5vw;
     min-height: 80vh;
     display: flex;
@@ -260,7 +249,7 @@ body[data-theme="v3"] {
     justify-content: center;
 }
 
-[data-theme="v3"] .v3-massive-text {
+.v3-massive-text {
     font-size: clamp(3rem, 10vw, 9rem);
     line-height: 0.9;
     text-transform: uppercase;
@@ -269,7 +258,7 @@ body[data-theme="v3"] {
     letter-spacing: -0.03em;
 }
 
-[data-theme="v3"] .v3-massive-text em {
+.v3-massive-text em {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: 400;
@@ -277,7 +266,7 @@ body[data-theme="v3"] {
     text-transform: lowercase;
 }
 
-[data-theme="v3"] .v3-statement-desc {
+.v3-statement-desc {
     margin-top: 10vh;
     max-width: 400px;
     margin-left: auto;
@@ -290,19 +279,18 @@ body[data-theme="v3"] {
 /* ========================================
    SCENE 3: THE COLLECTION (ROOMS)
    ======================================== */
-[data-theme="v3"] .v3-scene-rooms {
+.v3-scene-rooms {
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: relative;
     border-top: 1px solid var(--v3-border);
 }
 
-/* Left side sticky header */
-[data-theme="v3"] .v3-rooms-left {
+.v3-rooms-left {
     position: relative;
 }
 
-[data-theme="v3"] .v3-rooms-sticky {
+.v3-rooms-sticky {
     position: sticky;
     top: 0;
     height: 100vh;
@@ -313,27 +301,26 @@ body[data-theme="v3"] {
     border-right: 1px solid var(--v3-border);
 }
 
-[data-theme="v3"] .v3-rooms-sticky h2 {
+.v3-rooms-sticky h2 {
     font-size: clamp(4rem, 8vw, 7rem);
     line-height: 1;
     color: var(--v3-gold);
     font-style: italic;
 }
 
-[data-theme="v3"] .v3-rooms-sticky p {
+.v3-rooms-sticky p {
     margin-top: 2rem;
     font-size: 1.2rem;
     color: var(--v3-text);
     max-width: 300px;
 }
 
-/* Right side scrolling catalog */
-[data-theme="v3"] .v3-rooms-right {
+.v3-rooms-right {
     display: flex;
     flex-direction: column;
 }
 
-[data-theme="v3"] .v3-room-catalog-item {
+.v3-room-catalog-item {
     height: 100vh;
     padding: 5vw;
     display: flex;
@@ -342,38 +329,38 @@ body[data-theme="v3"] {
     border-bottom: 1px solid var(--v3-border);
 }
 
-[data-theme="v3"] .v3-room-catalog-img {
+.v3-room-catalog-img {
     width: 100%;
     height: 60vh;
     overflow: hidden;
     background: #111;
 }
 
-[data-theme="v3"] .v3-room-catalog-img img {
+.v3-room-catalog-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-[data-theme="v3"] .v3-room-catalog-item:hover .v3-room-catalog-img img {
+.v3-room-catalog-item:hover .v3-room-catalog-img img {
     transform: scale(1.05);
 }
 
-[data-theme="v3"] .v3-room-catalog-info {
+.v3-room-catalog-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-top: 2rem;
 }
 
-[data-theme="v3"] .v3-room-catalog-info h3 {
+.v3-room-catalog-info h3 {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-[data-theme="v3"] .v3-btn-minimal {
+.v3-btn-minimal {
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -385,16 +372,16 @@ body[data-theme="v3"] {
     transition: color 0.3s;
 }
 
-[data-theme="v3"] .v3-btn-minimal:hover {
+.v3-btn-minimal:hover {
     color: var(--v3-gold);
 }
 
 @media (max-width: 992px) {
-    [data-theme="v3"] .v3-scene-rooms {
+    .v3-scene-rooms {
         grid-template-columns: 1fr;
     }
 
-    [data-theme="v3"] .v3-rooms-sticky {
+    .v3-rooms-sticky {
         position: relative;
         height: auto;
         padding: 10vh 5vw;
@@ -402,7 +389,7 @@ body[data-theme="v3"] {
         border-bottom: 1px solid var(--v3-border);
     }
 
-    [data-theme="v3"] .v3-room-catalog-item {
+    .v3-room-catalog-item {
         height: auto;
         padding: 10vh 5vw;
     }
@@ -411,53 +398,40 @@ body[data-theme="v3"] {
 /* ========================================
    SCENE 4: THE EXPERIENCE (360 TOUR)
    ======================================== */
-[data-theme="v3"] .v3-scene-tour {
-    height: 100vh;
+.v3-scene-tour {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     background: #000;
 }
 
-[data-theme="v3"] .v3-tour-frame {
+.v3-tour-header {
+    padding: 8vh 5vw 4vh;
+}
+
+.v3-tour-header h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-transform: uppercase;
+    color: var(--v3-text);
+    letter-spacing: 0.1em;
+}
+
+.v3-tour-frame {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    opacity: 0.5;
-    transition: opacity 0.6s ease;
+    height: 80vh;
+    position: relative;
 }
 
-[data-theme="v3"] .v3-tour-frame:hover {
-    opacity: 1;
-}
-
-[data-theme="v3"] .v3-tour-frame iframe {
+.v3-tour-frame iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
 
-[data-theme="v3"] .v3-tour-overlay-text {
-    position: absolute;
-    z-index: 10;
-    pointer-events: none;
-    text-align: center;
-}
-
-[data-theme="v3"] .v3-tour-overlay-text h2 {
-    font-size: clamp(3rem, 6vw, 5rem);
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 0.1em;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-}
-
 /* ========================================
    SCENE 5: THE CONTACT
    ======================================== */
-[data-theme="v3"] .v3-scene-contact {
+.v3-scene-contact {
     padding: 15vh 5vw;
     min-height: 80vh;
     display: flex;
@@ -465,7 +439,7 @@ body[data-theme="v3"] {
     justify-content: space-between;
 }
 
-[data-theme="v3"] .v3-contact-mega {
+.v3-contact-mega {
     font-size: clamp(4rem, 12vw, 10rem);
     line-height: 0.8;
     color: var(--v3-text);
@@ -475,11 +449,11 @@ body[data-theme="v3"] {
     display: inline-block;
 }
 
-[data-theme="v3"] .v3-contact-mega:hover {
+.v3-contact-mega:hover {
     color: var(--v3-gold);
 }
 
-[data-theme="v3"] .v3-footer-grid {
+.v3-footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
@@ -487,7 +461,7 @@ body[data-theme="v3"] {
     padding-top: 40px;
 }
 
-[data-theme="v3"] .v3-footer-col h4 {
+.v3-footer-col h4 {
     font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 3px;
@@ -496,8 +470,8 @@ body[data-theme="v3"] {
     margin-bottom: 20px;
 }
 
-[data-theme="v3"] .v3-footer-col p,
-[data-theme="v3"] .v3-footer-col a {
+.v3-footer-col p,
+.v3-footer-col a {
     font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
     color: var(--v3-muted);
@@ -506,23 +480,6 @@ body[data-theme="v3"] {
     transition: color 0.3s;
 }
 
-[data-theme="v3"] .v3-footer-col a:hover {
+.v3-footer-col a:hover {
     color: var(--v3-text);
-}
-
-/* ========================================
-   V3 TOGGLE OVERRIDE
-   ======================================== */
-[data-theme="v3"] .theme-toggle {
-    background: rgba(10, 10, 10, 0.8);
-    border-color: rgba(234, 230, 223, 0.2);
-}
-
-[data-theme="v3"] .theme-toggle button {
-    color: rgba(234, 230, 223, 0.4);
-}
-
-[data-theme="v3"] .theme-toggle button.active {
-    background: var(--v3-text);
-    color: var(--v3-bg);
 }
