@@ -57,10 +57,9 @@ function initTourActivation() {
   if (!overlay || !iframe) return;
 
   overlay.addEventListener('click', () => {
-    const realSrc = iframe.getAttribute('data-src');
-    if (realSrc) {
-      iframe.setAttribute('src', realSrc);
-    }
+    // Colorize the iframe (remove grayscale)
+    iframe.closest('.v3-tour-frame').classList.add('active');
+    // Hide the activation overlay
     overlay.classList.add('hidden');
   });
 }

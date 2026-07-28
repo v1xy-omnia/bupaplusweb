@@ -181,7 +181,7 @@ h4 {
 }
 
 .v3-hero-logo img {
-    height: 70px;
+    height: 100px;
     width: auto;
     filter: brightness(0) invert(1);
     opacity: 0.9;
@@ -383,6 +383,15 @@ h4 {
     letter-spacing: 2px;
 }
 
+.v3-room-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--v3-muted);
+    margin-top: 6px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
 .v3-btn-minimal {
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
@@ -450,6 +459,12 @@ h4 {
     width: 100%;
     height: 100%;
     border: none;
+    filter: grayscale(1) brightness(0.6);
+    transition: filter 0.8s ease;
+}
+
+.v3-tour-frame.active iframe {
+    filter: none;
 }
 
 /* Click-to-activate overlay */
@@ -555,4 +570,114 @@ h4 {
 
 .v3-footer-col a:hover {
     color: var(--v3-text);
+}
+
+/* ========================================
+   SERVICES SECTION
+   ======================================== */
+.v3-scene-services {
+    padding: 15vh 5vw;
+    border-top: 1px solid var(--v3-border);
+}
+
+.v3-services-header {
+    margin-bottom: 8vh;
+}
+
+.v3-services-header h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: var(--v3-gold);
+    font-style: italic;
+}
+
+.v3-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+
+.v3-service-item {
+    padding: 3rem 2rem;
+    border: 1px solid var(--v3-border);
+    margin: -0.5px;
+    transition: background 0.4s ease;
+}
+
+.v3-service-item:hover {
+    background: rgba(194, 163, 112, 0.05);
+}
+
+.v3-service-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--v3-gold);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.v3-service-item h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--v3-text);
+}
+
+@media (max-width: 768px) {
+    .v3-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   WHATSAPP CTA BUTTON
+   ======================================== */
+.v3-footer-whatsapp {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.v3-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff !important;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.v3-wa-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+    color: #fff !important;
+}
+
+.v3-wa-btn svg {
+    flex-shrink: 0;
+}
+
+/* ========================================
+   GOOGLE MAPS
+   ======================================== */
+.v3-map-wrapper {
+    margin-top: 60px;
+    border-top: 1px solid var(--v3-border);
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.v3-map-wrapper iframe {
+    width: 100%;
+    height: 300px;
+    display: block;
 }
