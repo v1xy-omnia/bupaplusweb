@@ -1,5 +1,6 @@
 /* ========================================
-   BÜPA PLUS HOTEL - Main JavaScript
+   BÜPA PLUS HOTEL — Main JavaScript
+   Clean interactions, no gimmicks.
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,23 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initCounterAnimation();
   initSmoothScroll();
+  initHeroParallax();
 });
 
 /* --- Navbar Scroll Effect --- */
 function initNavbar() {
   const navbar = document.getElementById('navbar');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > 50) {
+    if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
-
-    lastScroll = currentScroll;
   }, { passive: true });
 }
 
@@ -53,26 +50,24 @@ function initMobileMenu() {
   hamburger.addEventListener('click', toggleMenu);
   overlay.addEventListener('click', closeMenu);
 
-  // Close menu when clicking a nav link
   navLinks.querySelectorAll('a:not(.btn-reserve)').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 }
 
-/* --- Scroll Reveal Animation --- */
+/* --- Scroll Reveal — staggered, varied --- */
 function initScrollReveal() {
-  const reveals = document.querySelectorAll('.reveal');
+  const reveals = document.querySelectorAll('.reveal, .reveal-fade');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Don't unobserve so elements stay visible
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -60px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
   });
 
   reveals.forEach(el => observer.observe(el));
@@ -97,7 +92,7 @@ function initCounterAnimation() {
 }
 
 function animateCounter(element, target) {
-  const duration = 2000;
+  const duration = 1600;
   const step = target / (duration / 16);
   let current = 0;
 
@@ -132,4 +127,39 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/* --- Hero Parallax — subtle depth on scroll --- */
+function initHeroParallax() {
+  const heroVideo = document.getElementById('heroVideo');
+  const heroContent = document.querySelector('.hero-content');
+
+  if (!heroVideo && !heroContent) return;
+
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const heroHeight = window.innerHeight;
+
+        if (scrollY < heroHeight) {
+          const ratio = scrollY / heroHeight;
+
+          if (heroVideo) {
+            heroVideo.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.15}px))`;
+          }
+
+          if (heroContent) {
+            heroContent.style.opacity = 1 - ratio * 1.2;
+            heroContent.style.transform = `translateY(${scrollY * 0.08}px)`;
+          }
+        }
+
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
