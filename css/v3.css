@@ -342,43 +342,56 @@ h4 {
 /* COL 2: Middle Services */
 .v3-rooms-middle {
     border-right: 1px solid var(--v3-border);
-    padding: 20vh 3vw;
+    padding: 10vh 2vw 20vh 2vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .v3-services-vert-list {
     display: flex;
     flex-direction: column;
-    gap: 6vh;
-}
-
-.v3-services-vert-list h3 {
-    font-size: 1.5rem;
-    color: var(--v3-gold);
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    margin-bottom: 2rem;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 .v3-service-vert-item {
     display: flex;
     flex-direction: column;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--v3-border);
+    background: rgba(10, 10, 10, 0.2);
+    transition: border-color 0.3s;
+}
+
+.v3-service-vert-item:hover {
+    border-color: rgba(234, 230, 223, 0.3);
+}
+
+.v3-service-vert-item.v3-service-featured {
+    border-color: var(--v3-gold);
+    background: rgba(194, 163, 112, 0.08);
 }
 
 .v3-service-vert-item span {
-    font-size: 0.6rem;
-    letter-spacing: 3px;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
     font-family: 'Inter', sans-serif;
     color: var(--v3-muted);
 }
 
 .v3-service-vert-item h4 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 300;
     font-family: 'Inter', sans-serif;
     color: var(--v3-text);
-    margin-top: 8px;
+    margin-top: 4px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.v3-service-vert-item.v3-service-featured h4 {
+    color: var(--v3-gold);
+    font-weight: 400;
 }
 
 /* COL 3: Rooms Catalog */
@@ -470,11 +483,12 @@ h4 {
     .v3-rooms-middle {
         border-right: none;
         border-bottom: 1px solid var(--v3-border);
-        padding: 10vh 5vw;
+        padding: 5vh 5vw;
     }
 
     .v3-services-vert-list {
-        gap: 3vh;
+        gap: 1.5vh;
+        justify-content: flex-start;
     }
 
     .v3-rooms-right {
