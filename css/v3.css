@@ -300,11 +300,11 @@ h4 {
 }
 
 /* ========================================
-   SCENE 3: THE COLLECTION (ROOMS)
+   SCENE 3: THE COLLECTION (ROOMS 3-COL)
    ======================================== */
 .v3-scene-rooms {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 28% 22% 50%;
     position: relative;
     border-top: 1px solid var(--v3-border);
 }
@@ -313,6 +313,7 @@ h4 {
     position: relative;
 }
 
+/* COL 1: Sticky Header */
 .v3-rooms-sticky {
     position: sticky;
     top: 0;
@@ -338,14 +339,59 @@ h4 {
     max-width: 300px;
 }
 
-.v3-rooms-right {
+/* COL 2: Middle Services */
+.v3-rooms-middle {
+    border-right: 1px solid var(--v3-border);
+    padding: 20vh 3vw;
+}
+
+.v3-services-vert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+
+.v3-services-vert-list h3 {
+    font-size: 1.5rem;
+    color: var(--v3-gold);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.v3-service-vert-item {
     display: flex;
     flex-direction: column;
 }
 
+.v3-service-vert-item span {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    font-family: 'Inter', sans-serif;
+    color: var(--v3-muted);
+}
+
+.v3-service-vert-item h4 {
+    font-size: 0.95rem;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+    color: var(--v3-text);
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* COL 3: Rooms Catalog */
+.v3-rooms-right {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--v3-border);
+    margin-left: -1px;
+}
+
 .v3-room-catalog-item {
     height: 100vh;
-    padding: 5vw;
+    padding: 10vh 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -419,6 +465,21 @@ h4 {
         padding: 10vh 5vw;
         border-right: none;
         border-bottom: 1px solid var(--v3-border);
+    }
+
+    .v3-rooms-middle {
+        border-right: none;
+        border-bottom: 1px solid var(--v3-border);
+        padding: 10vh 5vw;
+    }
+
+    .v3-services-vert-list {
+        gap: 3vh;
+    }
+
+    .v3-rooms-right {
+        border-left: none;
+        margin-left: 0;
     }
 
     .v3-room-catalog-item {
@@ -572,64 +633,7 @@ h4 {
     color: var(--v3-text);
 }
 
-/* ========================================
-   SERVICES SECTION
-   ======================================== */
-.v3-scene-services {
-    padding: 15vh 5vw;
-    border-top: 1px solid var(--v3-border);
-}
-
-.v3-services-header {
-    margin-bottom: 8vh;
-}
-
-.v3-services-header h2 {
-    font-size: clamp(3rem, 6vw, 5rem);
-    color: var(--v3-gold);
-    font-style: italic;
-}
-
-.v3-services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-}
-
-.v3-service-item {
-    padding: 3rem 2rem;
-    border: 1px solid var(--v3-border);
-    margin: -0.5px;
-    transition: background 0.4s ease;
-}
-
-.v3-service-item:hover {
-    background: rgba(194, 163, 112, 0.05);
-}
-
-.v3-service-num {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    color: var(--v3-gold);
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.v3-service-item h4 {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--v3-text);
-}
-
-@media (max-width: 768px) {
-    .v3-services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* STANDALONE SERVICES REMOVED (NOW IN MIDDLE COLUMN) */
 
 /* ========================================
    WHATSAPP CTA BUTTON
