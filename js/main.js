@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initV3Menu();
   initSmoothScroll();
+  initTourActivation();
 });
 
 /* --- V3 Menu Overlay --- */
@@ -46,5 +47,20 @@ function initSmoothScroll() {
         });
       }
     });
+  });
+}
+
+/* --- Tour Click-to-Activate --- */
+function initTourActivation() {
+  const overlay = document.getElementById('tourActivate');
+  const iframe = document.getElementById('tour-embeded');
+  if (!overlay || !iframe) return;
+
+  overlay.addEventListener('click', () => {
+    const realSrc = iframe.getAttribute('data-src');
+    if (realSrc) {
+      iframe.setAttribute('src', realSrc);
+    }
+    overlay.classList.add('hidden');
   });
 }
