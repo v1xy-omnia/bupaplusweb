@@ -15,13 +15,14 @@
   <meta property="og:type" content="website">
   <title>BÜPA Plus Hotel | Kayseri'nin Kalbinde Lüks Konaklama</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/v2.css">
   <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 
-<body>
+<body data-theme="v1">
 
   <!-- ====== NAVIGATION ====== -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar v1-only" id="navbar">
     <div class="container">
       <a href="#hero" class="nav-logo">
         <img src="assets/logo.png" alt="Büpa Plus Hotel Logo">
@@ -77,10 +78,10 @@
       </div>
     </div>
   </nav>
-  <div class="nav-overlay" id="navOverlay"></div>
+  <div class="nav-overlay v1-only" id="navOverlay"></div>
 
   <!-- ====== HERO ====== -->
-  <section class="hero" id="hero">
+  <section class="hero v1-only" id="hero">
     <div class="hero-video-wrap">
       <video autoplay muted loop playsinline id="heroVideo">
         <source src="images/bpaplusdrone.mp4" type="video/mp4">
@@ -122,7 +123,7 @@
   </section>
 
   <!-- ====== ABOUT ====== -->
-  <section class="section about" id="about">
+  <section class="section about v1-only" id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-image reveal">
@@ -160,7 +161,7 @@
   </section>
 
   <!-- ====== ROOMS ====== -->
-  <section class="section rooms" id="rooms">
+  <section class="section rooms v1-only" id="rooms">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Odalarımız</span>
@@ -395,7 +396,7 @@
   </section>
 
   <!-- ====== SERVICES ====== -->
-  <section class="section services" id="services">
+  <section class="section services v1-only" id="services">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Hizmetlerimiz</span>
@@ -576,7 +577,7 @@
   </section>
 
   <!-- ====== 360° VIRTUAL TOUR ====== -->
-  <section class="section virtual-tour" id="tour">
+  <section class="section virtual-tour v1-only" id="tour">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Sanal Tur</span>
@@ -601,7 +602,7 @@
   </section>
 
   <!-- ====== CONTACT ====== -->
-  <section class="section contact" id="contact">
+  <section class="section contact v1-only" id="contact">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">İletişim</span>
@@ -679,7 +680,7 @@
   </section>
 
   <!-- ====== FOOTER ====== -->
-  <footer class="footer">
+  <footer class="footer v1-only">
     <div class="container">
       <div class="footer-content">
         <a href="#hero" class="footer-logo">
@@ -701,13 +702,357 @@
   </footer>
 
   <!-- ====== FLOATING WHATSAPP ====== -->
-  <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="whatsapp-float"
+  <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="whatsapp-float v1-only"
     aria-label="WhatsApp ile iletişime geçin" id="whatsappFloat">
     <svg viewBox="0 0 24 24">
       <path
         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
+
+  <!-- ============================================================
+       V2 DESIGN — Light, editorial, whitespace-driven
+       ============================================================ -->
+
+  <!-- V2 NAVIGATION -->
+  <nav class="v2-nav v2-only" id="v2Navbar">
+    <div class="container">
+      <a href="#" class="v2-nav-logo"><img src="assets/logo.png" alt="Büpa Plus Hotel"></a>
+      <div class="v2-nav-links" id="v2NavLinks">
+        <a href="#v2about">Hakkımızda</a>
+        <a href="#v2rooms">Odalar</a>
+        <a href="#v2services">Hizmetler</a>
+        <a href="#v2tour">360° Tur</a>
+        <a href="#v2contact">İletişim</a>
+        <div class="v2-mobile-cta">
+          <a href="tel:+903525025550" class="v2-nav-phone">+90 352 502 55 50</a>
+          <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank"
+            class="v2-btn-reserve">Rezervasyon</a>
+        </div>
+      </div>
+      <div class="v2-nav-cta">
+        <a href="tel:+903525025550" class="v2-nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          +90 352 502 55 50
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="v2-btn-reserve">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Rezervasyon
+        </a>
+      </div>
+      <div class="v2-hamburger" id="v2Hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="v2-nav-overlay v2-only" id="v2NavOverlay"></div>
+
+  <!-- V2 HERO -->
+  <section class="v2-hero v2-only">
+    <div class="v2-hero-video">
+      <video autoplay muted loop playsinline>
+        <source src="images/bpaplusdrone.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="v2-hero-overlay"></div>
+    <div class="v2-hero-content">
+      <span class="v2-hero-tag">Büpa Plus Hotel · Kayseri</span>
+      <h1>Şehrin Merkezinde<br><em>Huzurlu Konaklama</em></h1>
+      <p>2025'te açılan otelimiz, Kayseri'nin kalbinde 112 odayla hizmetinizde.</p>
+      <div class="v2-hero-cta">
+        <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="v2-btn-light">Rezervasyon
+          Yap</a>
+        <a href="#v2tour" class="v2-btn-ghost">Sanal Tur</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- V2 ABOUT -->
+  <section class="v2-about v2-only v2-reveal" id="v2about">
+    <div class="v2-about-grid">
+      <div class="v2-about-image v2-reveal">
+        <img src="images/bupa_logo.png" alt="Büpa Plus Hotel">
+      </div>
+      <div class="v2-about-text v2-reveal">
+        <span class="v2-label">Hakkımızda</span>
+        <h2 class="v2-heading">2025'te Açıldık,<br>Kayseri'nin Merkezindeyiz</h2>
+        <div class="v2-divider"></div>
+        <p class="v2-body-text">Büpa Plus Hotel, 2025 yılında hizmete girdi. 112 odamız, yeni donanımımız ve merkezi
+          konumumuzla Kayseri'ye gelen iş ve tatil misafirlerine rahat bir konaklama sunuyoruz.</p>
+        <div class="v2-stats">
+          <div class="v2-stat"><span class="v2-stat-number">112</span><span class="v2-stat-label">Oda</span></div>
+          <div class="v2-stat"><span class="v2-stat-number">16</span><span class="v2-stat-label">Hizmet</span></div>
+          <div class="v2-stat"><span class="v2-stat-number">4</span><span class="v2-stat-label">Oda Tipi</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- V2 ROOMS -->
+  <section class="v2-rooms v2-only" id="v2rooms">
+    <div class="v2-rooms-header v2-reveal">
+      <span class="v2-label">Odalarımız</span>
+      <h2 class="v2-heading">4 Farklı Oda Tipi</h2>
+    </div>
+    <div class="v2-rooms-scroll">
+      <div class="v2-room-card">
+        <div class="v2-room-img"><img src="images/standart-oda.jpg" alt="Standart Oda"></div>
+        <div class="v2-room-body">
+          <span class="v2-room-badge">77 Oda</span>
+          <h3 class="v2-room-name">Standart Oda</h3>
+          <p class="v2-room-desc">Tek oda ve tek banyodan oluşan standart odalarımız, %100 pamuklu tekstil malzemeleri
+            ile donatılmıştır.</p>
+          <div class="v2-room-meta">
+            <span class="v2-room-size">28 m²</span>
+            <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="v2-room-link">Rezervasyon
+              →</a>
+          </div>
+        </div>
+      </div>
+      <div class="v2-room-card">
+        <div class="v2-room-img"><img src="images/twin-oda.jpg" alt="Twin Oda"></div>
+        <div class="v2-room-body">
+          <span class="v2-room-badge">29 Oda</span>
+          <h3 class="v2-room-name">Twin Oda <span
+              style="font-weight:300;font-size:0.85em;color:var(--v2-light)">(Aile)</span></h3>
+          <p class="v2-room-desc">Bir tek kişilik ve bir çift kişilik yataktan oluşan twin odalarımız, aileler için
+            ideal konfor sunar.</p>
+          <div class="v2-room-meta">
+            <span class="v2-room-size">28 m²</span>
+            <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="v2-room-link">Rezervasyon
+              →</a>
+          </div>
+        </div>
+      </div>
+      <div class="v2-room-card">
+        <div class="v2-room-img"><img src="images/triple-oda.jpg" alt="Triple Oda"></div>
+        <div class="v2-room-body">
+          <span class="v2-room-badge">5 Oda</span>
+          <h3 class="v2-room-name">Triple Oda <span style="font-weight:300;font-size:0.85em;color:var(--v2-light)">(Üç
+              Yataklı)</span></h3>
+          <p class="v2-room-desc">3 adet tek kişilik yataktan oluşan triple odalarımız, arkadaş grupları ve iş
+            seyahatleri için idealdir.</p>
+          <div class="v2-room-meta">
+            <span class="v2-room-size">28 m²</span>
+            <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="v2-room-link">Rezervasyon
+              →</a>
+          </div>
+        </div>
+      </div>
+      <div class="v2-room-card">
+        <div class="v2-room-img"><img src="images/suit-oda.jpg" alt="Süit Oda"></div>
+        <div class="v2-room-body">
+          <span class="v2-room-badge">Süit</span>
+          <h3 class="v2-room-name">Süit Oda</h3>
+          <p class="v2-room-desc">Çift kişilik yatak, banyo ve ayrı oturma odasından oluşan süit odamız, 2 adet TV ile
+            donatılmıştır.</p>
+          <div class="v2-room-meta">
+            <span class="v2-room-size">56 m²</span>
+            <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="v2-room-link">Rezervasyon
+              →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- V2 SERVICES -->
+  <section class="v2-services v2-only" id="v2services">
+    <div class="container">
+      <div class="v2-reveal">
+        <span class="v2-label">Hizmetler</span>
+        <h2 class="v2-heading" style="margin-bottom:40px;">Odanızda Neler Var?</h2>
+      </div>
+      <div class="v2-services-grid v2-reveal">
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 14v.5M16 14v.5M12 14v.5" />
+            <rect x="2" y="6" width="20" height="12" rx="2" />
+          </svg><span>İklimlendirme</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7" />
+            <rect x="6" y="4" width="12" height="6" rx="1" />
+          </svg><span>Konforlu Yatak</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 8h1a4 4 0 110 8h-1" />
+            <path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z" />
+            <line x1="6" y1="2" x2="6" y2="4" />
+            <line x1="10" y1="2" x2="10" y2="4" />
+          </svg><span>Çay / Kahve</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg><span>Çalışma Alanı</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2" />
+          </svg><span>7/24 Sıcak Su</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+          </svg><span>Saç Kurutma</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg><span>Temiz Havlu</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8h1a4 4 0 010 8h-1" />
+            <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+          </svg><span>Lounge</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="4" y="2" width="16" height="20" rx="2" />
+            <line x1="4" y1="10" x2="20" y2="10" />
+            <line x1="10" y1="2" x2="10" y2="10" />
+          </svg><span>Minibar</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="3" width="15" height="13" />
+            <polygon points="16 8 20 5 20 16 16 13 16 8" />
+          </svg><span>TV &amp; Uydu</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12.55a11 11 0 0114.08 0M8.53 16.11a6 6 0 016.95 0M12 20h.01M1.42 9a16 16 0 0121.16 0" />
+          </svg><span>Kablosuz İnternet</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="6" y="1" width="12" height="22" rx="2" />
+            <line x1="12" y1="18" x2="12.01" y2="18" />
+          </svg><span>Kablosuz Şarj</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72" />
+          </svg><span>Telefon</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" />
+            <path d="M7 11V7a5 5 0 0110 0v4" />
+          </svg><span>Çelik Kasa</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg><span>Çamaşır Yıkama</span></div>
+        <div class="v2-service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="3" width="22" height="18" rx="3" />
+            <circle cx="12" cy="12" r="3" />
+            <path d="M7 3v2M17 3v2" />
+          </svg><span>Ücretsiz Otopark</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- V2 TOUR -->
+  <section class="v2-tour v2-only" id="v2tour">
+    <div class="container">
+      <div class="v2-reveal">
+        <span class="v2-label">360° Sanal Tur</span>
+        <h2 class="v2-heading">Gelmeden Önce Bir Göz Atın</h2>
+      </div>
+      <div class="v2-tour-frame v2-reveal">
+        <iframe width="100%" height="560" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer"
+          allowfullscreen scrolling="no"
+          src="https://kuula.co/share/collection/7TXwc?logo=1&info=1&fs=1&vr=0&zoom=1&thumbs=-1&alpha=0.83&keys=0"
+          title="Büpa Plus Hotel 360° Sanal Tur" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- V2 CONTACT -->
+  <section class="v2-contact v2-only" id="v2contact">
+    <div class="container">
+      <div class="v2-reveal">
+        <span class="v2-label">İletişim</span>
+        <h2 class="v2-heading">Bize Ulaşın</h2>
+      </div>
+      <div class="v2-contact-grid v2-reveal">
+        <div>
+          <div class="v2-contact-item">
+            <div class="v2-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg></div>
+            <div class="v2-contact-detail">
+              <h4>Adres</h4>
+              <p>Gülük Mahallesi Otel Sokak No: 8<br>38050 Melikgazi / Kayseri</p>
+            </div>
+          </div>
+          <div class="v2-contact-item">
+            <div class="v2-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+              </svg></div>
+            <div class="v2-contact-detail">
+              <h4>Telefon</h4><a href="tel:+903525025550">+90 352 502 55 50</a>
+            </div>
+          </div>
+          <div class="v2-contact-item">
+            <div class="v2-contact-icon"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg></div>
+            <div class="v2-contact-detail">
+              <h4>WhatsApp</h4><a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank">+90 533 047 52
+                50</a>
+            </div>
+          </div>
+          <div class="v2-contact-socials">
+            <a href="https://www.instagram.com/bupaplushotel/" target="_blank" class="v2-social"
+              aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></a>
+            <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="v2-social"
+              aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="v2-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3092.5!2d35.4877!3d38.7312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDQzJzUyLjMiTiAzNcKwMjknMTUuNyJF!5e0!3m2!1str!2str!4v1688000000000!5m2!1str!2str"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Büpa Plus Hotel Konum"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- V2 FOOTER -->
+  <footer class="v2-footer v2-only">
+    <div class="container">
+      <div class="v2-footer-inner">
+        <a href="#" class="v2-footer-logo"><img src="assets/logo.png" alt="Büpa Plus Hotel"></a>
+        <div class="v2-footer-links">
+          <a href="#v2about">Hakkımızda</a>
+          <a href="#v2rooms">Odalar</a>
+          <a href="#v2services">Hizmetler</a>
+          <a href="#v2tour">360° Tur</a>
+          <a href="#v2contact">İletişim</a>
+        </div>
+      </div>
+      <div class="v2-footer-bottom">
+        <span>© 2025 Büpa Plus Hotel. Tüm hakları saklıdır.</span>
+        <span>Gülük Mah. Otel Sok. No:8 Melikgazi / Kayseri</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- V2 WHATSAPP FLOAT -->
+  <a href="https://api.whatsapp.com/send?phone=905330475250" target="_blank" class="v2-whatsapp v2-only"
+    aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ====== THEME TOGGLE ====== -->
+  <div class="theme-toggle" id="themeToggle">
+    <button id="btnV1" class="active">V1</button>
+    <button id="btnV2">V2</button>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

@@ -1,0 +1,1050 @@
+/* ========================================
+   BÜPA PLUS HOTEL — V2 Design System
+   Light, editorial, whitespace-driven.
+   ======================================== */
+
+/* --- V2 Custom Properties --- */
+[data-theme="v2"] {
+    --v2-cream: #F4EDE4;
+    --v2-cream-dark: #E8DFD2;
+    --v2-gold: #9A7B4F;
+    --v2-gold-light: #B8995E;
+    --v2-gold-pale: #D4C4A8;
+    --v2-charcoal: #1C1C1C;
+    --v2-dark: #2A2A2A;
+    --v2-medium: #6B6560;
+    --v2-light: #A09A92;
+    --v2-stone: #C8BBA8;
+    --v2-white: #FEFCF9;
+    --v2-border: rgba(154, 123, 79, 0.15);
+}
+
+/* --- Theme Toggle Visibility --- */
+[data-theme="v2"] .v1-only {
+    display: none !important;
+}
+
+[data-theme="v1"] .v2-only {
+    display: none !important;
+}
+
+/* --- V2 Body Override --- */
+[data-theme="v2"] body,
+body[data-theme="v2"] {
+    background-color: var(--v2-cream);
+    color: var(--v2-charcoal);
+}
+
+/* Kill grain overlay in V2 */
+[data-theme="v2"] body::after {
+    display: none;
+}
+
+/* ========================================
+   V2 NAVBAR
+   ======================================== */
+[data-theme="v2"] .v2-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    z-index: 1000;
+    transition: all 0.35s ease;
+    border-bottom: 1px solid transparent;
+    display: flex;
+    align-items: center;
+}
+
+[data-theme="v2"] .v2-nav.scrolled {
+    background: rgba(244, 237, 228, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--v2-border);
+}
+
+[data-theme="v2"] .v2-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+[data-theme="v2"] .v2-nav-logo img {
+    height: 52px;
+    transition: opacity 0.2s;
+}
+
+[data-theme="v2"] .v2-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+[data-theme="v2"] .v2-nav-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--v2-medium);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+[data-theme="v2"] .v2-nav-links a:hover {
+    color: var(--v2-gold);
+}
+
+[data-theme="v2"] .v2-nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+[data-theme="v2"] .v2-nav-phone {
+    font-size: 0.8rem;
+    color: var(--v2-gold);
+    text-decoration: none;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+[data-theme="v2"] .v2-nav-phone svg {
+    width: 14px;
+    height: 14px;
+}
+
+[data-theme="v2"] .v2-btn-reserve {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    background: var(--v2-charcoal);
+    color: var(--v2-cream) !important;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background 0.25s;
+}
+
+[data-theme="v2"] .v2-btn-reserve:hover {
+    background: var(--v2-dark);
+}
+
+[data-theme="v2"] .v2-btn-reserve svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* V2 Hamburger */
+[data-theme="v2"] .v2-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+[data-theme="v2"] .v2-hamburger span {
+    width: 22px;
+    height: 1.5px;
+    background: var(--v2-charcoal);
+    transition: all 0.2s;
+}
+
+[data-theme="v2"] .v2-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+[data-theme="v2"] .v2-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+[data-theme="v2"] .v2-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ========================================
+   V2 HERO — Cinematic, minimal
+   ======================================== */
+[data-theme="v2"] .v2-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+[data-theme="v2"] .v2-hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+[data-theme="v2"] .v2-hero-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+[data-theme="v2"] .v2-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(28, 28, 28, 0.2) 0%,
+            rgba(28, 28, 28, 0.05) 50%,
+            rgba(28, 28, 28, 0.6) 100%);
+    z-index: 1;
+}
+
+[data-theme="v2"] .v2-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 48px 72px;
+    max-width: 680px;
+}
+
+[data-theme="v2"] .v2-hero-content .v2-hero-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--v2-gold-pale);
+    margin-bottom: 16px;
+    display: block;
+    opacity: 0;
+    animation: v2FadeUp 0.8s 0.3s forwards;
+}
+
+[data-theme="v2"] .v2-hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: v2FadeUp 0.8s 0.5s forwards;
+}
+
+[data-theme="v2"] .v2-hero-content h1 em {
+    font-style: italic;
+    color: var(--v2-gold-pale);
+}
+
+[data-theme="v2"] .v2-hero-content p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 440px;
+    opacity: 0;
+    animation: v2FadeUp 0.8s 0.7s forwards;
+}
+
+[data-theme="v2"] .v2-hero-cta {
+    display: flex;
+    gap: 12px;
+    opacity: 0;
+    animation: v2FadeUp 0.8s 0.9s forwards;
+}
+
+[data-theme="v2"] .v2-hero-cta a {
+    text-decoration: none;
+}
+
+[data-theme="v2"] .v2-btn-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--v2-charcoal);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all 0.25s;
+    border: none;
+}
+
+[data-theme="v2"] .v2-btn-light:hover {
+    background: #fff;
+}
+
+[data-theme="v2"] .v2-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: transparent;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 3px;
+    transition: all 0.25s;
+}
+
+[data-theme="v2"] .v2-btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes v2FadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   V2 ABOUT — Split layout
+   ======================================== */
+[data-theme="v2"] .v2-about {
+    padding: 120px 0;
+    background: var(--v2-cream);
+}
+
+[data-theme="v2"] .v2-about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+[data-theme="v2"] .v2-about-image {
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--v2-cream-dark);
+}
+
+[data-theme="v2"] .v2-about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 32px;
+}
+
+[data-theme="v2"] .v2-about-text {
+    padding: 20px 0;
+}
+
+[data-theme="v2"] .v2-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--v2-gold);
+    margin-bottom: 16px;
+    display: block;
+}
+
+[data-theme="v2"] .v2-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    color: var(--v2-charcoal);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+}
+
+[data-theme="v2"] .v2-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--v2-gold);
+    margin-bottom: 24px;
+    opacity: 0.5;
+}
+
+[data-theme="v2"] .v2-body-text {
+    font-size: 0.92rem;
+    color: var(--v2-medium);
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+[data-theme="v2"] .v2-stats {
+    display: flex;
+    gap: 32px;
+}
+
+[data-theme="v2"] .v2-stat {
+    text-align: center;
+}
+
+[data-theme="v2"] .v2-stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--v2-gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+[data-theme="v2"] .v2-stat-label {
+    font-size: 0.65rem;
+    color: var(--v2-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   V2 ROOMS — Horizontal scroll gallery
+   ======================================== */
+[data-theme="v2"] .v2-rooms {
+    padding: 100px 0;
+    background: var(--v2-white);
+}
+
+[data-theme="v2"] .v2-rooms-header {
+    max-width: 1200px;
+    margin: 0 auto 48px;
+    padding: 0 32px;
+}
+
+[data-theme="v2"] .v2-rooms-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 32px 20px;
+    scrollbar-width: none;
+}
+
+[data-theme="v2"] .v2-rooms-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+[data-theme="v2"] .v2-room-card {
+    flex: 0 0 380px;
+    scroll-snap-align: start;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--v2-cream);
+    border: 1px solid var(--v2-border);
+    transition: border-color 0.3s;
+}
+
+[data-theme="v2"] .v2-room-card:hover {
+    border-color: var(--v2-gold-pale);
+}
+
+[data-theme="v2"] .v2-room-img {
+    height: 280px;
+    overflow: hidden;
+}
+
+[data-theme="v2"] .v2-room-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+[data-theme="v2"] .v2-room-card:hover .v2-room-img img {
+    transform: scale(1.03);
+}
+
+[data-theme="v2"] .v2-room-body {
+    padding: 24px;
+}
+
+[data-theme="v2"] .v2-room-badge {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--v2-gold);
+    margin-bottom: 8px;
+    display: block;
+}
+
+[data-theme="v2"] .v2-room-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--v2-charcoal);
+    margin-bottom: 8px;
+}
+
+[data-theme="v2"] .v2-room-desc {
+    font-size: 0.82rem;
+    color: var(--v2-medium);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-weight: 300;
+}
+
+[data-theme="v2"] .v2-room-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--v2-border);
+}
+
+[data-theme="v2"] .v2-room-size {
+    font-size: 0.78rem;
+    color: var(--v2-light);
+}
+
+[data-theme="v2"] .v2-room-link {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--v2-gold);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+[data-theme="v2"] .v2-room-link:hover {
+    color: var(--v2-charcoal);
+}
+
+/* ========================================
+   V2 SERVICES — Clean two-column
+   ======================================== */
+[data-theme="v2"] .v2-services {
+    padding: 100px 0;
+    background: var(--v2-cream);
+}
+
+[data-theme="v2"] .v2-services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+[data-theme="v2"] .v2-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--v2-border);
+    border-left: 1px solid var(--v2-border);
+}
+
+[data-theme="v2"] .v2-service-item {
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid var(--v2-border);
+    border-bottom: 1px solid var(--v2-border);
+    transition: background 0.3s;
+}
+
+[data-theme="v2"] .v2-service-item:hover {
+    background: rgba(154, 123, 79, 0.04);
+}
+
+[data-theme="v2"] .v2-service-item svg {
+    width: 22px;
+    height: 22px;
+    color: var(--v2-gold);
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+[data-theme="v2"] .v2-service-item span {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--v2-dark);
+    letter-spacing: 0.3px;
+}
+
+/* ========================================
+   V2 TOUR — Tabbed 360° experience
+   ======================================== */
+[data-theme="v2"] .v2-tour {
+    padding: 100px 0;
+    background: var(--v2-white);
+}
+
+[data-theme="v2"] .v2-tour .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+[data-theme="v2"] .v2-tour-frame {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--v2-border);
+    margin-top: 40px;
+}
+
+[data-theme="v2"] .v2-tour-frame iframe {
+    display: block;
+    width: 100%;
+    height: 560px;
+    border: none;
+}
+
+/* ========================================
+   V2 CONTACT
+   ======================================== */
+[data-theme="v2"] .v2-contact {
+    padding: 100px 0;
+    background: var(--v2-cream);
+}
+
+[data-theme="v2"] .v2-contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+[data-theme="v2"] .v2-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: start;
+}
+
+[data-theme="v2"] .v2-contact-item {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--v2-border);
+}
+
+[data-theme="v2"] .v2-contact-item:last-of-type {
+    border-bottom: none;
+}
+
+[data-theme="v2"] .v2-contact-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--v2-gold);
+    opacity: 0.6;
+}
+
+[data-theme="v2"] .v2-contact-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+[data-theme="v2"] .v2-contact-detail h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--v2-charcoal);
+    margin-bottom: 4px;
+}
+
+[data-theme="v2"] .v2-contact-detail p,
+[data-theme="v2"] .v2-contact-detail a {
+    font-size: 0.85rem;
+    color: var(--v2-medium);
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+[data-theme="v2"] .v2-contact-detail a:hover {
+    color: var(--v2-gold);
+}
+
+[data-theme="v2"] .v2-contact-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+[data-theme="v2"] .v2-social {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--v2-border);
+    border-radius: 4px;
+    color: var(--v2-gold);
+    text-decoration: none;
+    transition: all 0.25s;
+}
+
+[data-theme="v2"] .v2-social:hover {
+    background: var(--v2-gold);
+    color: var(--v2-cream);
+    border-color: var(--v2-gold);
+}
+
+[data-theme="v2"] .v2-social svg {
+    width: 16px;
+    height: 16px;
+}
+
+[data-theme="v2"] .v2-map {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--v2-border);
+    height: 360px;
+}
+
+[data-theme="v2"] .v2-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(0.3) contrast(1.05);
+    transition: filter 0.3s;
+}
+
+[data-theme="v2"] .v2-map:hover iframe {
+    filter: grayscale(0) contrast(1);
+}
+
+/* ========================================
+   V2 FOOTER
+   ======================================== */
+[data-theme="v2"] .v2-footer {
+    background: var(--v2-charcoal);
+    padding: 48px 0 20px;
+}
+
+[data-theme="v2"] .v2-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+[data-theme="v2"] .v2-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 20px;
+}
+
+[data-theme="v2"] .v2-footer-logo img {
+    height: 40px;
+    opacity: 0.7;
+}
+
+[data-theme="v2"] .v2-footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+[data-theme="v2"] .v2-footer-links a {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+
+[data-theme="v2"] .v2-footer-links a:hover {
+    color: var(--v2-gold-pale);
+}
+
+[data-theme="v2"] .v2-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* ========================================
+   V2 WHATSAPP FLOAT
+   ======================================== */
+[data-theme="v2"] .v2-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(37, 211, 102, 0.2);
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+[data-theme="v2"] .v2-whatsapp:hover {
+    opacity: 0.85;
+}
+
+[data-theme="v2"] .v2-whatsapp svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+/* ========================================
+   THEME TOGGLE BUTTON
+   ======================================== */
+.theme-toggle {
+    position: fixed;
+    bottom: 28px;
+    left: 28px;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    background: rgba(28, 28, 28, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle button {
+    padding: 8px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-toggle button.active {
+    background: var(--v2-gold, #9A7B4F);
+    color: #0F0E0C;
+}
+
+.theme-toggle button:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* V2 light mode toggle override */
+[data-theme="v2"] .theme-toggle {
+    background: rgba(244, 237, 228, 0.9);
+    border: 1px solid rgba(154, 123, 79, 0.15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="v2"] .theme-toggle button {
+    color: rgba(28, 28, 28, 0.35);
+}
+
+[data-theme="v2"] .theme-toggle button.active {
+    background: var(--v2-gold);
+    color: var(--v2-cream);
+}
+
+/* ========================================
+   V2 RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    [data-theme="v2"] .v2-nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(244, 237, 228, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 32px;
+        transition: right 0.35s ease;
+        border-left: 1px solid var(--v2-border);
+        z-index: 1000;
+    }
+
+    [data-theme="v2"] .v2-nav-links.active {
+        right: 0;
+    }
+
+    [data-theme="v2"] .v2-nav-links a {
+        font-size: 0.9rem;
+    }
+
+    [data-theme="v2"] .v2-hamburger {
+        display: flex;
+    }
+
+    [data-theme="v2"] .v2-nav-cta {
+        display: none;
+    }
+
+    [data-theme="v2"] .v2-hero-content {
+        padding: 0 24px 56px;
+    }
+
+    [data-theme="v2"] .v2-hero-content h1 {
+        font-size: clamp(1.8rem, 7vw, 2.8rem);
+    }
+
+    [data-theme="v2"] .v2-about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    [data-theme="v2"] .v2-about-image {
+        aspect-ratio: 16/10;
+    }
+
+    [data-theme="v2"] .v2-room-card {
+        flex: 0 0 300px;
+    }
+
+    [data-theme="v2"] .v2-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    [data-theme="v2"] .v2-tour-frame iframe {
+        height: 360px;
+    }
+
+    [data-theme="v2"] .v2-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    [data-theme="v2"] .v2-footer-inner {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    [data-theme="v2"] .v2-footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    [data-theme="v2"] .v2-footer-bottom {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+
+    .theme-toggle {
+        bottom: 16px;
+        left: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-theme="v2"] .v2-hero {
+        min-height: 550px;
+    }
+
+    [data-theme="v2"] .v2-hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    [data-theme="v2"] .v2-btn-light,
+    [data-theme="v2"] .v2-btn-ghost {
+        width: 100%;
+        justify-content: center;
+    }
+
+    [data-theme="v2"] .v2-room-card {
+        flex: 0 0 85vw;
+    }
+
+    [data-theme="v2"] .v2-room-img {
+        height: 200px;
+    }
+
+    [data-theme="v2"] .v2-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    [data-theme="v2"] .v2-stats {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    [data-theme="v2"] .v2-tour-frame iframe {
+        height: 260px;
+    }
+}
+
+/* V2 Mobile nav overlay */
+[data-theme="v2"] .v2-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+[data-theme="v2"] .v2-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* V2 mobile CTA in menu */
+[data-theme="v2"] .v2-mobile-cta {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    [data-theme="v2"] .v2-mobile-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--v2-border);
+    }
+}
+
+/* V2 Reveal animations */
+[data-theme="v2"] .v2-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-theme="v2"] .v2-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
