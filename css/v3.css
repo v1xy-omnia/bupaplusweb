@@ -151,7 +151,7 @@ h4 {
    ======================================== */
 .v3-scene-hook {
     position: relative;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -167,9 +167,18 @@ h4 {
 
 .v3-video-wrapper video {
     width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     filter: brightness(0.6) contrast(1.1) grayscale(0.2);
+}
+
+@media (max-width: 768px) {
+    .v3-video-wrapper video {
+        object-position: 70% 50%;
+        /* Shifts video slightly to frame hotel better on mobile */
+    }
 }
 
 .v3-hero-logo {
@@ -221,20 +230,20 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
     color: #fff;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .v3-scroll-indicator span {
-    font-size: 0.6rem;
-    letter-spacing: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 6px;
     text-transform: uppercase;
 }
 
 .v3-line-drop {
     width: 1px;
-    height: 60px;
+    height: 100px;
     background: rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
@@ -249,6 +258,14 @@ h4 {
     height: 50%;
     background: #fff;
     animation: drop 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@media (max-width: 768px) {
+    .v3-scroll-indicator {
+        left: auto;
+        right: 8vw;
+        transform: none;
+    }
 }
 
 @keyframes drop {
