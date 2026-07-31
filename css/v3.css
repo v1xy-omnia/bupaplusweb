@@ -1,9 +1,6 @@
-/* ========================================
-   BÜPA PLUS HOTEL — V3 DESIGN SYSTEM
-   Avant-Garde, Cinematic, Layoutless Grid
-   ======================================== */
+/* Bupa Plus Ana Tasarım Dosyası */
 
-/* --- V3 Custom Properties --- */
+/* Renkler ve Değişkenler */
 :root {
     --v3-bg: #0A0A0A;
     --v3-text: #EAE6DF;
@@ -13,7 +10,7 @@
     --v3-muted: rgba(234, 230, 223, 0.4);
 }
 
-/* --- V3 Global Override --- */
+/* Genel Body Ayarları */
 body {
     background-color: var(--v3-bg);
     color: var(--v3-text);
@@ -33,9 +30,7 @@ h4 {
     font-weight: 400;
 }
 
-/* ========================================
-   "INVISIBLE" NAV & MENU MODAL
-   ======================================== */
+/* Menü Alanı */
 .v3-nav-trigger {
     position: fixed;
     top: 40px;
@@ -146,9 +141,7 @@ h4 {
     transition-delay: 0.4s;
 }
 
-/* ========================================
-   SCENE 1: THE HOOK
-   ======================================== */
+/* Video Alanı */
 .v3-scene-hook {
     position: relative;
     height: 100dvh;
@@ -278,9 +271,7 @@ h4 {
     }
 }
 
-/* ========================================
-   SCENE 2: THE STATEMENT
-   ======================================== */
+/* Kısa Yazı Alanı */
 .v3-scene-statement {
     padding: 20vh 5vw;
     min-height: 80vh;
@@ -316,9 +307,7 @@ h4 {
     font-weight: 300;
 }
 
-/* ========================================
-   SCENE 3: THE COLLECTION (ROOMS 3-COL)
-   ======================================== */
+/* Odalar ve Hizmetler */
 .v3-scene-rooms {
     display: grid;
     grid-template-columns: 28% 22% 50%;
@@ -519,9 +508,7 @@ h4 {
     }
 }
 
-/* ========================================
-   SCENE 4: THE EXPERIENCE (360 TOUR)
-   ======================================== */
+/* 360 Sanal Tur */
 .v3-scene-tour {
     position: relative;
     display: flex;
@@ -608,9 +595,7 @@ h4 {
     display: none;
 }
 
-/* ========================================
-   SCENE 5: THE CONTACT
-   ======================================== */
+/* İletişim ve Footer */
 .v3-scene-contact {
     padding: 15vh 5vw;
     min-height: 80vh;

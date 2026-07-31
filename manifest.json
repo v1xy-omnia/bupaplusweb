@@ -1,0 +1,16 @@
+{
+  "name": "Büpa Plus Hotel",
+  "short_name": "Büpa Plus",
+  "description": "Kayseri'nin merkezinde lüks ve konforlu konaklama deneyimi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

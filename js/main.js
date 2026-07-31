@@ -1,7 +1,4 @@
-/* ========================================
-   BÜPA PLUS HOTEL — Main JavaScript
-   V3 Final (Single Theme)
-   ======================================== */
+// Bupa Plus Hotel JS Kodları
 
 document.addEventListener('DOMContentLoaded', () => {
   initV3Menu();
@@ -9,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTourActivation();
 });
 
-/* --- V3 Menu Overlay --- */
+// Mobil menü işlemleri
 function initV3Menu() {
   const trigger = document.getElementById('v3Trigger');
   const overlay = document.getElementById('v3MenuOverlay');
@@ -30,7 +27,7 @@ function initV3Menu() {
   });
 }
 
-/* --- Smooth Scroll --- */
+// Linklere yumuşak kaydırma (smooth scroll)
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -50,7 +47,7 @@ function initSmoothScroll() {
   });
 }
 
-/* --- Tour Click-to-Activate --- */
+// 360 Sanal tur iframe aktifleştirici
 function initTourActivation() {
   const overlay = document.getElementById('tourActivate');
   const iframe = document.getElementById('tour-embeded');

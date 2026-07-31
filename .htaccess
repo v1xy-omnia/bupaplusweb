@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Yönlendirmeler (Eski siteden Yeni tek sayfa siteye)
+RewriteRule ^kurumsal/?$ /#v3-statement [R=301,L]
+RewriteRule ^hizmetlerimiz/?$ /#v3-services [R=301,L]
+RewriteRule ^odalarimiz/?$ /#v3-rooms [R=301,L]
+RewriteRule ^rezervasyon/?$ /#v3-rooms [R=301,L]
+RewriteRule ^iletisim/?$ /#v3-contact [R=301,L]
+RewriteRule ^restaurant/?$ /#v3-services [R=301,L]
+RewriteRule ^lobi-dinlenme-salonu/?$ /#v3-services [R=301,L]
+RewriteRule ^slide1/?$ /#v3-rooms [R=301,L]
+
+</IfModule>

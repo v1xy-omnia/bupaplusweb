@@ -13,15 +13,28 @@
   <meta property="og:description"
     content="Kayseri'nin merkezinde premium konaklama deneyimi. 360° sanal tur ile otelimizi keşfedin.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://bupaplushotel.com/assets/logo.png">
+  <meta property="og:url" content="https://bupaplushotel.com/">
+  <meta name="twitter:card" content="summary_large_image">
   <title>BÜPA Plus Hotel | Kayseri'nin Kalbinde Lüks Konaklama</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/v3.css">
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="manifest" href="manifest.json">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16909602864"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16909602864');
+  </script>
 </head>
 
 <body data-theme="v3">
 
-  <!-- ====== NAVIGATION TRIGGER ====== -->
+  <!-- Menü İkonu -->
   <div class="v3-nav-trigger" id="v3Trigger">
     <span class="v3-menu-label">Menu</span>
     <div class="v3-burger"><span></span><span></span></div>
@@ -37,7 +50,7 @@
     </div>
   </div>
 
-  <!-- ====== HERO ====== -->
+  <!-- Video Alanı -->
   <section class="v3-scene-hook">
     <div class="v3-video-wrapper">
       <video autoplay muted loop playsinline>
@@ -57,7 +70,7 @@
     </div>
   </section>
 
-  <!-- ====== STATEMENT ====== -->
+  <!-- Kısa Açıklama -->
   <section class="v3-scene-statement" id="v3-statement">
     <h2 class="v3-massive-text">Konforda<br><em>ilham</em> veren<br>vizyon.</h2>
     <p class="v3-statement-desc">Modern mimarimiz ve kişiselleştirilmiş lüks anlayışımızla Kayseri'nin merkezinde
@@ -65,10 +78,10 @@
       değil, yaşam tarzınızın yansımasıdır.</p>
   </section>
 
-  <!-- ====== ROOMS & SERVICES (3 COLS) ====== -->
+  <!-- Odalar ve Hizmetler -->
   <section class="v3-scene-rooms" id="v3-rooms">
 
-    <!-- COL 1: STICKY HEADER -->
+    <!-- Sol Kolon: Başlık -->
     <div class="v3-rooms-left">
       <div class="v3-rooms-sticky">
         <h2>Kolek-<br>siyon.</h2>
@@ -76,7 +89,7 @@
       </div>
     </div>
 
-    <!-- COL 2: SCROLLING SERVICES -->
+    <!-- Orta Kolon: Hizmetler Listesi -->
     <div class="v3-rooms-middle" id="v3-services">
       <div class="v3-services-vert-list">
 
@@ -152,11 +165,11 @@
       </div>
     </div>
 
-    <!-- COL 3: SCROLLING ROOMS -->
+    <!-- Sağ Kolon: Odalar -->
     <div class="v3-rooms-right">
 
       <div class="v3-room-catalog-item">
-        <div class="v3-room-catalog-img"><img src="images/standart-oda.jpg" alt="Standart Oda"></div>
+        <div class="v3-room-catalog-img"><img src="images/standart-oda.jpg" alt="Standart Oda" loading="lazy"></div>
         <div class="v3-room-catalog-info">
           <div>
             <h3>Standart</h3>
@@ -167,7 +180,7 @@
       </div>
 
       <div class="v3-room-catalog-item">
-        <div class="v3-room-catalog-img"><img src="images/twin-oda.jpg" alt="Twin Oda"></div>
+        <div class="v3-room-catalog-img"><img src="images/twin-oda.jpg" alt="Twin Oda" loading="lazy"></div>
         <div class="v3-room-catalog-info">
           <div>
             <h3>Twin</h3>
@@ -178,7 +191,7 @@
       </div>
 
       <div class="v3-room-catalog-item">
-        <div class="v3-room-catalog-img"><img src="images/triple-oda.jpg" alt="Triple Oda"></div>
+        <div class="v3-room-catalog-img"><img src="images/triple-oda.jpg" alt="Triple Oda" loading="lazy"></div>
         <div class="v3-room-catalog-info">
           <div>
             <h3>Triple</h3>
@@ -189,7 +202,7 @@
       </div>
 
       <div class="v3-room-catalog-item">
-        <div class="v3-room-catalog-img"><img src="images/suit-oda.jpg" alt="Süit Oda"></div>
+        <div class="v3-room-catalog-img"><img src="images/suit-oda.jpg" alt="Süit Oda" loading="lazy"></div>
         <div class="v3-room-catalog-info">
           <div>
             <h3>Süit</h3>
@@ -202,7 +215,7 @@
     </div>
   </section>
 
-  <!-- ====== 360° SANAL TUR ====== -->
+  <!-- 360 Derece Sanal Tur -->
   <section class="v3-scene-tour" id="v3-tour">
     <div class="v3-tour-header">
       <h2>Sanal Tur</h2>
@@ -219,7 +232,7 @@
     </div>
   </section>
 
-  <!-- ====== CONTACT ====== -->
+  <!-- İletişim ve Footer -->
   <section class="v3-scene-contact" id="v3-contact">
     <a href="tel:+903525025550" class="v3-contact-mega">Bize<br>Ulaşın.</a>
 
@@ -250,6 +263,7 @@
     <!-- Google Maps -->
     <div class="v3-map-wrapper">
       <iframe
+        title="Büpa Plus Hotel Konumu"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.907707750718!2d35.47864977691155!3d38.71992787176243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b130014f2bff3%3A0xc5e2c188457e67fc!2sB%C3%9CPA%20PLUS%20HOTEL!5e0!3m2!1str!2str!4v1785270175041!5m2!1str!2str"
         width="100%" height="350" style="border:0; filter: grayscale(1) invert(0.92) contrast(0.8);" allowfullscreen=""
         loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
