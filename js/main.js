@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initV3Menu();
   initSmoothScroll();
   initTourActivation();
+  initErciyesVideoScroll();
 });
 
 // Mobil menü işlemleri
@@ -59,4 +60,23 @@ function initTourActivation() {
     // Hide the activation overlay
     overlay.classList.add('hidden');
   });
+}
+
+// Erciyes videosu kaydirma ile tetikleme
+function initErciyesVideoScroll() {
+  const video = document.getElementById('erciyes-video');
+  if (!video) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (video.paused && !video.ended) {
+          video.play().catch(e => console.log('Video autoplay prevented', e));
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const section = document.getElementById('v3-statement');
+  if (section) observer.observe(section);
 }

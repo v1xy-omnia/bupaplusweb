@@ -71,9 +71,15 @@
   </section>
 
   <!-- Kısa Açıklama -->
-  <section class="v3-scene-statement" id="v3-statement" style="background: url('images/suit-oda.jpg') center/cover fixed; position: relative;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.85); z-index: 0;"></div>
-    <div style="position: relative; z-index: 1; display: flex; flex-direction: column; width: 100%;">
+  <section class="v3-scene-statement" id="v3-statement" style="position: relative; overflow: hidden;">
+    <!-- Arka Plan Videosu -->
+    <video id="erciyes-video" muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+      <source src="images/Erciyes%20Son.mp4" type="video/mp4">
+    </video>
+    <!-- Karanlık Overlay (%85 Siyah) -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.85); z-index: 1;"></div>
+    
+    <div style="position: relative; z-index: 2; display: flex; flex-direction: column; width: 100%;">
       <h2 class="v3-massive-text" style="font-size: 4.5rem; line-height: 1.1;">
         Geleneksel<br>
         <em>Misafirperverliğin</em><br>
