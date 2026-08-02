@@ -942,6 +942,6 @@ h4 {
 .v3-scene-statement, .v3-scene-rooms, .v3-scene-tour, .v3-scene-contact { background-color: var(--v3-bg); position: relative; z-index: 1; }
 
 @media (max-width: 768px) {
-    .v3-scene-statement { min-height: 40vh; padding: 5vh 5vw; }
-    .v3-statement-desc { margin-top: auto; margin-left: 0; max-width: 100%; line-height: 1.6; }
+    .v3-scene-statement { height: 60vh; min-height: auto; padding: 5vh 5vw 0 5vw; justify-content: flex-start; }
+    .v3-statement-desc { margin-top: auto; margin-left: 0; max-width: 100%; line-height: 1.6; margin-bottom: 20px; }
 }
