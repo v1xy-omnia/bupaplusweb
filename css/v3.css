@@ -742,11 +742,206 @@ h4 {
     .v3-floating-wa svg {
         width: 26px;
         height: 26px;
+.v3-tour-frame.active iframe {
+    filter: none;
+}
+
+/* Click-to-activate overlay */
+.v3-tour-activate {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: rgba(10, 10, 10, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+.v3-tour-activate:hover {
+    background: rgba(10, 10, 10, 0.5);
+}
+
+.v3-tour-activate-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--v3-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--v3-gold);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.v3-tour-activate:hover .v3-tour-activate-icon {
+    transform: scale(1.1);
+    background: rgba(194, 163, 112, 0.15);
+}
+
+.v3-tour-activate span {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--v3-text);
+    opacity: 0.7;
+}
+
+.v3-tour-activate.hidden {
+    display: none;
+}
+
+/* İletişim ve Footer */
+.v3-scene-contact {
+    padding: 15vh 5vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.v3-contact-mega {
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.8;
+    color: var(--v3-text);
+    margin-bottom: 10vh;
+    transition: color 0.4s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.v3-contact-mega:hover {
+    color: var(--v3-gold);
+}
+
+.v3-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    border-top: 1px solid var(--v3-border);
+    padding-top: 40px;
+}
+
+.v3-footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--v3-gold);
+    margin-bottom: 20px;
+}
+
+.v3-footer-col p,
+.v3-footer-col a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--v3-muted);
+    text-decoration: none;
+    line-height: 1.5;
+    transition: color 0.3s;
+}
+
+.v3-footer-col a:hover {
+    color: var(--v3-text);
+}
+
+/* STANDALONE SERVICES REMOVED (NOW IN MIDDLE COLUMN) */
+
+/* ========================================
+   WHATSAPP CTA BUTTON
+   ======================================== */
+.v3-footer-whatsapp {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.v3-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff !important;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.v3-wa-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+    color: #fff !important;
+}
+
+.v3-wa-btn svg {
+    flex-shrink: 0;
+}
+
+/* ========================================
+   GOOGLE MAPS
+   ======================================== */
+.v3-map-wrapper {
+    margin-top: 60px;
+    border-top: 1px solid var(--v3-border);
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.v3-map-wrapper iframe {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+/* ========================================
+   FLOATING WHATSAPP BUTTON
+   ======================================== */
+.v3-floating-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--v3-gold);
+    color: var(--v3-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.v3-floating-wa:hover {
+    transform: scale(1.1);
+    background-color: var(--v3-gold-dark);
+}
+
+@media (max-width: 768px) {
+    .v3-floating-wa {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    .v3-floating-wa svg {
+        width: 26px;
+        height: 26px;
     }
 }
 .v3-scene-statement, .v3-scene-rooms, .v3-scene-tour, .v3-scene-contact { background-color: var(--v3-bg); position: relative; z-index: 1; }
 
 @media (max-width: 768px) {
-    .v3-scene-statement { min-height: 50vh; padding: 10vh 5vw; }
-    .v3-statement-desc { margin-top: 5vh; margin-left: 0; max-width: 100%; }
+    .v3-scene-statement { min-height: 35vh; padding: 5vh 5vw; }
+    .v3-statement-desc { margin-top: 3vh; margin-left: 0; max-width: 100%; font-size: 0.85rem; line-height: 1.5; }
 }
