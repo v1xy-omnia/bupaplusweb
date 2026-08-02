@@ -160,7 +160,6 @@ h4 {
 
 .v3-video-wrapper video {
     width: 100%;
-    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -168,9 +167,11 @@ h4 {
 }
 
 @media (max-width: 768px) {
+    .v3-scene-hook {
+        height: 60vh; /* Reduces extreme vertical zoom on mobile */
+    }
     .v3-video-wrapper video {
-        object-fit: contain;
-        background-color: var(--v3-bg);
+        object-fit: cover; /* Prevents black bars while cropping less due to reduced height */
     }
 }
 
@@ -280,12 +281,15 @@ h4 {
 }
 
 .v3-massive-text {
-    font-size: clamp(3rem, 10vw, 9rem);
+    font-size: clamp(2.2rem, 8vw, 9rem);
     line-height: 0.9;
     text-transform: uppercase;
     color: var(--v3-text);
     max-width: 1400px;
     letter-spacing: -0.03em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .v3-massive-text em {
