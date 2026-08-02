@@ -143,7 +143,9 @@ h4 {
 
 /* Video Alanı */
 .v3-scene-hook {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 0;
     height: 100dvh;
     width: 100%;
     overflow: hidden;
@@ -742,3 +744,4 @@ h4 {
         height: 26px;
     }
 }
+.v3-scene-statement, .v3-scene-rooms, .v3-scene-tour, .v3-scene-contact { background-color: var(--v3-bg); position: relative; z-index: 1; }
