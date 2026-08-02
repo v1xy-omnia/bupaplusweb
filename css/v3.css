@@ -941,6 +941,6 @@ h4 {
 
 @media (max-width: 768px) {
     .v3-scene-statement { height: 60vh; min-height: auto; padding: 5vh 5vw; }
-    .v3-statement-desc { position: absolute; bottom: 3vh; left: 5vw; right: 5vw; margin: 0; max-width: none; line-height: 1.6; }
-    #erciyes-video { object-position: 25% center !important; }
+    .v3-statement-desc { position: absolute !important; bottom: 3vh !important; left: 5vw !important; right: 5vw !important; margin: 0 !important; max-width: none !important; line-height: 1.6 !important; }
+    #erciyes-video { object-position: left center !important; }
 }
